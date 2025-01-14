@@ -4,7 +4,7 @@ export async function POST(req: Request) {
         const gifs = await Promise.all(
             keywords.map(async (keyword: string) => {
                 const response = await fetch(
-                    `https://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${encodeURIComponent(keyword)}&limit=5`
+                    `https://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${encodeURIComponent(keyword)}&limit=10`
                 );
                 const data = await response.json();
                 return {
